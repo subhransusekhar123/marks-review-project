@@ -26,12 +26,10 @@ const postTopicData = async (req,res) => {
     }
 
     console.log(overall);
-    let generate_percentage = Math.floor(x);
-    console.log(generate_percentage);
     let topic = topicController({
         name:req.body.name,
         desc:overall,
-        percentage:generate_percentage,
+        percentage:0,
         user_id:req.body.id
     })
     let saveTopic =await topic.save();
