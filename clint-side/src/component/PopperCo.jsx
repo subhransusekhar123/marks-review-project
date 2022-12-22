@@ -22,14 +22,14 @@ const PopperCo = ({ ele, index}) => {
     }else if(ele.underStanding == 1){
       setColor("red")
       console.log(color)
+      
     }else if(ele.underStanding == 2){
       setColor("blue")
       console.log(color)
 
     }else if(ele.underStanding == 3 ){
-      setColor("yellow")
+      setColor("pink")
       console.log(color)
-
     }else{
       setColor("green")
     }
@@ -37,7 +37,7 @@ const PopperCo = ({ ele, index}) => {
 
   useEffect(()=>{
     colorDecider();
-  },[])
+  },[color])
 
   let dispatch = useDispatch();
 
@@ -54,7 +54,7 @@ const PopperCo = ({ ele, index}) => {
     .catch((err)=>console.log(err))
   }
   return (
-    <div>
+    <span>
       <span aria-describedby={id} type="button" onClick={handleClick}>
         <span key={index} style={{color:color}}>{ele.sentence}</span>
       </span>
@@ -70,7 +70,7 @@ const PopperCo = ({ ele, index}) => {
 
         </Box>
       </Popper>
-    </div>
+    </span>
   )
 }
 
